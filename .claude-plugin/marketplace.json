@@ -1,0 +1,6 @@
+{
+  "name": "claude-usage-bar",
+  "description": "Строка контекста и лимитов для Claude Code",
+  "owner": { "name": "Stan-Freeman" },
+  "plugins": [{ "name": "usage-bar", "source": "./" }]
+}
