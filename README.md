@@ -1,4 +1,4 @@
-# usage-bar — мод для Claude Code
+# usage-bar для Claude Code
 
 Под строкой ввода:
 
@@ -8,26 +8,36 @@
 Неделя   ▰▰▰▰▰▱▱▱▱▱▱▱  41% | 2 д 21 ч
 ```
 
-У лимитов после `|` — время до их обновления.
+У лимитов после `|` — время до их обновления. Лимиты видны на подписке Pro/Max после первого ответа.
 
-- полоска оставшегося контекста;
-- лимит на 5 часов и недельный лимит со временем до сброса (только Pro/Max);
+Плюс:
 - приятный звук, когда задача готова;
 - вопрос «Разрешить / Запретить» перед любой командой удаления (`rm`, `rmdir`, `git rm`, `git clean`, `find -delete`, `del`, `Remove-Item`…).
 
-## Установка
+## Установка (Windows)
 
-В терминале запустите `claude` и введите:
+**1. Строка под вводом.** В PowerShell или командной строке:
+
+```
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/Stan-Freeman/claude-usage-bar/main/install-statusline.ps1 | iex"
+```
+
+Установщик сохранит копию ваших настроек в `settings.json.bak`.
+
+**2. Звук и защита от удаления.** В Claude Code:
 
 ```
 /plugin install usage-bar --marketplace Stan-Freeman/claude-usage-bar
 ```
 
-На вопрос `Add marketplace?` ответьте `y`, затем выберите область **user** (Enter).
-После этого мод работает во всех новых сессиях, в том числе во вкладке Code приложения Claude.
+На вопрос `Add marketplace?` ответьте `y`, затем выберите **user**.
+
+Перезапустите Claude Code.
 
 ## Удаление
 
 ```
 /plugin uninstall usage-bar
 ```
+
+Строку состояния уберите из `%USERPROFILE%\.claude\settings.json` (блок `statusLine`) или верните копию `settings.json.bak`.
